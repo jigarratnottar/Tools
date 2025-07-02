@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online video compression tool - reduce video file size while maintaining quality. Supports MP4, MOV, AVI and more.">
+    <meta name="keywords" content="video compressor, reduce video size, online video tool, free video compression, optimize videos">
+    <meta name="author" content="VideoCompressPro">
+    <meta property="og:title" content="Free Online Video Compression Tool">
+    <meta property="og:description" content="Compress videos online for free without losing quality. Perfect for social media, websites, and email.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourvideocompressor.com">
+    <meta property="og:image" content="https://yourvideocompressor.com/thumbnail.jpg">
+    <title>Free Online Video Compression Tool | Reduce Video Size</title>
+    <link rel="canonical" href="https://yourvideocompressor.com">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ADSENSE_ID" crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --primary-color: #4285f4;
+            --secondary-color: #34a853;
+            --accent-color: #ea4335;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333;
+            --medium-gray: #757575;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: #f9f9f9;
+        }
+        
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        main {
+            padding: 2rem 0;
+        }
+        
+        .compression-tool {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .tool-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .tool-header h2 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .upload-area {
+            border: 2px dashed var(--medium-gray);
+            border-radius: 8px;
+            padding: 3rem 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-bottom: 2rem;
+        }
+        
+        .upload-area:hover {
+            border-color: var(--primary-color);
+            background-color: var(--light-gray);
+        }
+        
+        .upload-area i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .upload-area p {
+            margin-bottom: 1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+        
+        .btn:hover {
+            background-color: #3367d6;
+        }
+        
+        .btn-secondary {
+            background-color: var(--medium-gray);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #616161;
+        }
+        
+        .settings {
+            margin-bottom: 2rem;
+        }
+        
+        .settings h3 {
+            margin-bottom: 1rem;
+            color: var(--dark-gray);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        select, input[type="range"] {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .range-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+        }
+        
+        .preview-section {
+            display: none;
+            margin-top: 2rem;
+        }
+        
+        .preview-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .video-preview {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .video-preview h4 {
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        video {
+            width: 100%;
+            border-radius: 4px;
+            background-color: black;
+        }
+        
+        .stats {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .ad-container {
+            background-color: var(--light-gray);
+            padding: 1rem;
+            text-align: center;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+        
+        .ad-label {
+            font-size: 0.8rem;
+            color: var(--medium-gray);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .feature-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            color: var(--dark-gray);
+        }
+        
+        footer {
+            background-color: var(--dark-gray);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            margin: 1rem 0;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            margin-top: 1rem;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .preview-container {
+                flex-direction: column;
+            }
+        }
+        
+        /* Loading spinner */
+        .spinner {
+            display: none;
+            width: 40px;
+            height: 40px;
+            margin: 2rem auto;
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            border-top-color: var(--primary-color);
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Progress bar */
+        .progress-container {
+            width: 100%;
+            background-color: #f1f1f1;
+            border-radius: 4px;
+            margin: 1rem 0;
+            display: none;
+        }
+        
+        .progress-bar {
+            height: 10px;
+            background-color: var(--primary-color);
+            border-radius: 4px;
+            width: 0%;
+            transition: width 0.3s;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="/" class="logo">VideoCompressPro</a>
+            <nav>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>Compress Videos Online for Free</h1>
+            <p>Reduce video file size without losing quality. Perfect for social media, websites, and email attachments.</p>
+        </div>
+    </section>
+    
+    <div class="container">
+        <!-- Top Ad Banner -->
+        <div class="ad-container">
+            <div class="ad-label">Advertisement</div>
+            <!-- Replace with your AdSense code -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-YOUR_ADSENSE_ID"
+                 data-ad-slot="YOUR_AD_SLOT_ID"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        
+        <main>
+            <section class="compression-tool">
+                <div class="tool-header">
+                    <h2>Video Compression Tool</h2>
+                    <p>Upload your video and adjust compression settings</p>
+                </div>
+                
+                <div class="upload-area" id="uploadArea">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p>Drag & drop your video file here or click to browse</p>
+                    <input type="file" id="fileInput" accept="video/*" style="display: none;">
+                    <button class="btn" id="browseBtn">Select Video</button>
+                </div>
+                
+                <div class="settings" id="settingsSection" style="display: none;">
+                    <h3>Compression Settings</h3>
+                    
+                    <div class="form-group">
+                        <label for="compressionLevel">Compression Level</label>
+                        <input type="range" id="compressionLevel" min="0" max="100" value="50">
+                        <div class="range-labels">
+                            <span>Small File (Low Quality)</span>
+                            <span>Balanced</span>
+                            <span>High Quality (Large File)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="outputFormat">Output Format</label>
+                        <select id="outputFormat">
+                            <option value="mp4">MP4 (Recommended)</option>
+                            <option value="webm">WebM</option>
+                            <option value="mov">MOV</option>
+                            <option value="avi">AVI</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="resolution">Resolution</label>
+                        <select id="resolution">
+                            <option value="original">Original Resolution</option>
+                            <option value="1080">1080p (Full HD)</option>
+                            <option value="720">720p (HD)</option>
+                            <option value="480">480p (SD)</option>
+                            <option value="360">360p</option>
+                        </select>
+                    </div>
+                    
+                    <button class="btn" id="compressBtn">Compress Video</button>
+                </div>
+                
+                <div class="progress-container" id="progressContainer">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+                
+                <div class="spinner" id="spinner"></div>
+                
+                <div class="preview-section" id="previewSection">
+                    <h3>Results</h3>
+                    <div class="preview-container">
+                        <div class="video-preview">
+                            <h4>Original Video</h4>
+                            <video controls id="originalVideo"></video>
+                        </div>
+                        <div class="video-preview">
+                            <h4>Compressed Video</h4>
+                            <video controls id="compressedVideo"></video>
+                        </div>
+                        <div class="stats">
+                            <h4>Compression Stats</h4>
+                            <div class="stat-item">
+                                <span>Original Size:</span>
+                                <span id="originalSize">-</span>
+                            </div>
+                            <div class="stat-item">
+                                <span>Compressed Size:</span>
+                                <span id="compressedSize">-</span>
+                            </div>
+                            <div class="stat-item">
+                                <span>Reduction:</span>
+                                <span id="reduction">-</span>
+                            </div>
+                            <div class="stat-item">
+                                <span>Compression Time:</span>
+                                <span id="compressionTime">-</span>
+                            </div>
+                            <div class="stat-item">
+                                <a href="#" class="btn" id="downloadBtn">Download Compressed Video</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Middle Ad Banner -->
+            <div class="ad-container">
+                <div class="ad-label">Advertisement</div>
+                <!-- Replace with your AdSense code -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-YOUR_ADSENSE_ID"
+                     data-ad-slot="YOUR_AD_SLOT_ID"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+            
+            <section class="features" id="features">
+                <div class="feature-card">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <h3>Fast Compression</h3>
+                    <p>Our optimized algorithms compress your videos quickly without long wait times.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-lock"></i>
+                    <h3>Secure Processing</h3>
+                    <p>Your videos are processed in your browser and never uploaded to our servers.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-file-video"></i>
+                    <h3>Multiple Formats</h3>
+                    <p>Supports all popular video formats including MP4, MOV, AVI, and more.</p>
+                </div>
+            </section>
+            
+            <section id="how-it-works">
+                <h2>How Our Video Compressor Works</h2>
+                <p>Our tool makes it easy to reduce video file size while maintaining good quality:</p>
+                <ol>
+                    <li>Upload your video file (or drag and drop)</li>
+                    <li>Adjust compression settings to your needs</li>
+                    <li>Click "Compress Video" and wait a moment</li>
+                    <li>Preview the result and download your compressed video</li>
+                </ol>
+            </section>
+            
+            <!-- Bottom Ad Banner -->
+            <div class="ad-container">
+                <div class="ad-label">Advertisement</div>
+                <!-- Replace with your AdSense code -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-YOUR_ADSENSE_ID"
+                     data-ad-slot="YOUR_AD_SLOT_ID"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+            
+            <section id="faq">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-item">
+                    <h3>Is video compression free?</h3>
+                    <p>Yes, our video compression tool is completely free to use with no hidden charges.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Will compression reduce video quality?</h3>
+                    <p>Some quality reduction is inevitable when compressing, but our tool optimizes the balance between file size and quality.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What's the maximum video size I can compress?</h3>
+                    <p>You can compress videos up to 2GB in size. For larger files, consider splitting them first.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Are my videos stored on your servers?</h3>
+                    <p>No, all processing happens in your browser. Your videos never leave your device.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <footer>
+        <div class="container footer-content">
+            <a href="/" class="logo">VideoCompressPro</a>
+            <div class="footer-links">
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+                <a href="/contact">Contact Us</a>
+                <a href="/blog">Blog</a>
+            </div>
+            <p class="copyright">&copy; 2023 VideoCompressPro. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // DOM elements
+            const uploadArea = document.getElementById('uploadArea');
+            const fileInput = document.getElementById('fileInput');
+            const browseBtn = document.getElementById('browseBtn');
+            const settingsSection = document.getElementById('settingsSection');
+            const compressBtn = document.getElementById('compressBtn');
+            const previewSection = document.getElementById('previewSection');
+            const originalVideo = document.getElementById('originalVideo');
+            const compressedVideo = document.getElementById('compressedVideo');
+            const originalSize = document.getElementById('originalSize');
+            const compressedSize = document.getElementById('compressedSize');
+            const reduction = document.getElementById('reduction');
+            const compressionTime = document.getElementById('compressionTime');
+            const downloadBtn = document.getElementById('downloadBtn');
+            const spinner = document.getElementById('spinner');
+            const progressContainer = document.getElementById('progressContainer');
+            const progressBar = document.getElementById('progressBar');
+            
+            // Variables
+            let videoFile = null;
+            let compressedVideoBlob = null;
+            let startTime = null;
+            
+            // Event listeners
+            browseBtn.addEventListener('click', () => fileInput.click());
+            
+            uploadArea.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                uploadArea.style.borderColor = 'var(--primary-color)';
+                uploadArea.style.backgroundColor = 'var(--light-gray)';
+            });
+            
+            uploadArea.addEventListener('dragleave', () => {
+                uploadArea.style.borderColor = 'var(--medium-gray)';
+                uploadArea.style.backgroundColor = 'transparent';
+            });
+            
+            uploadArea.addEventListener('drop', (e) => {
+                e.preventDefault();
+                uploadArea.style.borderColor = 'var(--medium-gray)';
+                uploadArea.style.backgroundColor = 'transparent';
+                
+                if (e.dataTransfer.files.length) {
+                    handleFileSelection(e.dataTransfer.files[0]);
+                }
+            });
+            
+            fileInput.addEventListener('change', () => {
+                if (fileInput.files.length) {
+                    handleFileSelection(fileInput.files[0]);
+                }
+            });
+            
+            compressBtn.addEventListener('click', compressVideo);
+            downloadBtn.addEventListener('click', downloadCompressedVideo);
+            
+            // Functions
+            function handleFileSelection(file) {
+                // Check if file is a video
+                if (!file.type.startsWith('video/')) {
+                    alert('Please select a video file.');
+                    return;
+                }
+                
+                videoFile = file;
+                
+                // Show settings section
+                settingsSection.style.display = 'block';
+                
+                // Display original video
+                const videoURL = URL.createObjectURL(file);
+                originalVideo.src = videoURL;
+                
+                // Display original file size
+                originalSize.textContent = formatFileSize(file.size);
+            }
+            
+            function compressVideo() {
+                if (!videoFile) return;
+                
+                // Show loading spinner and progress bar
+                spinner.style.display = 'block';
+                progressContainer.style.display = 'block';
+                compressBtn.disabled = true;
+                startTime = new Date();
+                
+                // Simulate compression progress (in a real app, this would be actual compression)
+                let progress = 0;
+                const interval = setInterval(() => {
+                    progress += Math.random() * 10;
+                    if (progress > 100) progress = 100;
+                    progressBar.style.width = `${progress}%`;
+                    
+                    if (progress === 100) {
+                        clearInterval(interval);
+                        onCompressionComplete();
+                    }
+                }, 200);
+            }
+            
+            function onCompressionComplete() {
+                // Hide spinner
+                spinner.style.display = 'none';
+                
+                // In a real implementation, you would:
+                // 1. Actually compress the video using FFmpeg.js or similar
+                // 2. Get the compressed blob and its size
+                // For this demo, we'll simulate the result
+                
+                const compressionLevel = parseInt(document.getElementById('compressionLevel').value);
+                const originalSizeBytes = videoFile.size;
+                
+                // Calculate simulated compressed size (30-90% of original based on compression level)
+                const sizeReduction = 0.3 + (0.6 * (100 - compressionLevel) / 100;
+                const compressedSizeBytes = Math.round(originalSizeBytes * sizeReduction);
+                
+                // Create a fake blob for the demo
+                compressedVideoBlob = new Blob(['Simulated compressed video data'], { type: 'video/mp4' });
+                
+                // Display results
+                const compressedVideoURL = URL.createObjectURL(compressedVideoBlob);
+                compressedVideo.src = compressedVideoURL;
+                compressedSize.textContent = formatFileSize(compressedSizeBytes);
+                
+                const reductionPercent = Math.round((1 - (compressedSizeBytes / originalSizeBytes)) * 100);
+                reduction.textContent = `${reductionPercent}% smaller`;
+                
+                const endTime = new Date();
+                const timeDiff = (endTime - startTime) / 1000; // in seconds
+                compressionTime.textContent = `${timeDiff.toFixed(1)} seconds`;
+                
+                // Show preview section
+                previewSection.style.display = 'block';
+                compressBtn.disabled = false;
+                
+                // Scroll to results
+                previewSection.scrollIntoView({ behavior: 'smooth' });
+            }
+            
+            function downloadCompressedVideo(e) {
+                e.preventDefault();
+                if (!compressedVideoBlob) return;
+                
+                const a = document.createElement('a');
+                const url = URL.createObjectURL(compressedVideoBlob);
+                const filename = videoFile.name.replace(/\.[^/.]+$/, '') + '_compressed.mp4';
+                
+                a.href = url;
+                a.download = filename;
+                document.body.appendChild(a);
+                a.click();
+                
+                setTimeout(() => {
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                }, 0);
+            }
+            
+            function formatFileSize(bytes) {
+                if (bytes === 0) return '0 Bytes';
+                
+                const k = 1024;
+                const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+                const i = Math.floor(Math.log(bytes) / Math.log(k));
+                
+                return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+            }
+        });
+    </script>
+    
+    <!-- Structured data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "VideoCompressPro - Free Online Video Compression Tool",
+      "url": "https://yourvideocompressor.com",
+      "description": "Free online tool to compress videos and reduce file size without losing quality. Supports MP4, MOV, AVI and more.",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "VideoCompressPro"
+      }
+    }
+    </script>
+</body>
+</html>
